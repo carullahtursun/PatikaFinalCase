@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import Products from "../components/Products"
 import Navbar from "../layout/Navbar"
 
