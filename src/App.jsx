@@ -1,5 +1,4 @@
-/* import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg' */
+
 import { useEffect, useState } from 'react'
 import './App.css'
 import { Route, Routes } from "react-router-dom"

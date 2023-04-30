@@ -4,11 +4,13 @@ import axios from "axios";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import images from "./image";
-function Details() {
 
-  const { id } = useParams();
+function Details() {
+  const { id } = useParams(); // get the id parameter from the URL
   console.log(id);
+
   const { status, error, data } = useQuery(['starship', id], async () => {
+    // fetch data for the starship with the given id
     const response = await axios.get(`https://swapi.dev/api/starships/${id}`);
     return response.data;
   });
@@ -18,15 +20,18 @@ function Details() {
   }
 
   if (status === 'error') {
+    // show error message if there's an error fetching the data
     toast.error(error.message);
     return null;
   }
 
   if (!data) {
+    // show error message if data is not found
     toast.error('Starship not found');
     return null;
   }
 
+  // find the image for the starship
   const selectedStarship = images.find(image => image.name === data.name);
   return (
 
@@ -35,7 +40,7 @@ function Details() {
         <div className='flex justify-center w-full'>
 
           <article className="flex flex-col md:flex-row lg-flex-row    border-2 rounded-xl w-full md:w-3/4 lg:w-2/3 xl:w-2/3  bg-slate-900 transition hover:shadow-xl">
-            
+
 
             <div className=" basis-1/2">
               <img
@@ -98,7 +103,7 @@ function Details() {
 
 
                     <div className="flex flex-col w-full relative bottom-0">
-                      
+
 
                     </div>
                   </div>
