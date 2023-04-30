@@ -10,23 +10,23 @@ function Details() {
   console.log(id);
 
   const { status, error, data } = useQuery(['starship', id], async () => {
-    // fetch data for the starship with the given id
+    // Verilen id'ye sahip starship verilerini çekin
     const response = await axios.get(`https://swapi.dev/api/starships/${id}`);
     return response.data;
   });
-
+// Veriler yüklenirken "Loading..." mesajını gösterin
   if (status === 'loading') {
     return <p>Loading...</p>;
   }
 
   if (status === 'error') {
-    // show error message if there's an error fetching the data
+  // Veriler çekilirken bir hata olursa hata mesajını gösterin
     toast.error(error.message);
     return null;
   }
 
   if (!data) {
-    // show error message if data is not found
+   // Veri bulunamazsa hata mesajını gösterin
     toast.error('Starship not found');
     return null;
   }
@@ -38,10 +38,7 @@ function Details() {
     <div className="fixed z-10 inset-0 bg-transparent  overflow-y-auto">
       <div className="flex items-center justify-center w-full min-h-[100vh]">
         <div className='flex justify-center w-full'>
-
           <article className="flex flex-col md:flex-row lg-flex-row    border-2 rounded-xl w-full md:w-3/4 lg:w-2/3 xl:w-2/3  bg-slate-900 transition hover:shadow-xl">
-
-
             <div className=" basis-1/2">
               <img
                 alt="Guitar"
@@ -49,7 +46,6 @@ function Details() {
                 className="aspect-square  "
               />
             </div>
-
             <div className="flex flex-1 flex-col  justify-between">
               {/* ----------------------------------------- */}
               <div className="flex flex-col   w-full p-3 h-full  rounded-lg  ">
@@ -59,9 +55,6 @@ function Details() {
                     <div className="flex flex-col border-b h-full p-6 sm:border-b items-center  justify-center">
                       <p className=" text-3xl font-bold text-[#0ed3cf] rounded-full uppercase">{data.name}</p>
                     </div>
-
-
-
                     <div className="flex flex-col items-center p-4 ">
                       <div className="flex flex-row items-center border p-4 mb-2 rounded-xl space-x-5">
                         <span className="text-white uppercase">Model: </span>
@@ -99,12 +92,7 @@ function Details() {
 
                       </div>
                     </div>
-
-
-
                     <div className="flex flex-col w-full relative bottom-0">
-
-
                     </div>
                   </div>
                 </div>

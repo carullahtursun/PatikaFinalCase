@@ -4,9 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from 'axios';
 
 function Products({ search }) {
-    // Gelen search prop'unu konsola yazdır
-    console.log(search, 'dddd');
-
+    
     // useQuery hook'unu kullanarak API isteğini yap
     const { status, data } = useQuery({
         queryKey: ["starships", search],
@@ -19,7 +17,7 @@ function Products({ search }) {
 
     // Gelen verileri konsola yazdır
     data && console.log(data.data.results);
-
+    
     // Starship bileşenini kullanarak verileri render et
     return (
         <div className=' w-full max-h-[69vh]  rounded-t-lg drop-shadow-2xl  overflow-hidden overflow-y-scroll scrollbar scrollbar-thumb-gray-900 scrollbar-track-gray-100 border-spacing-1 p-3'>
