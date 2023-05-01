@@ -1,4 +1,6 @@
 ## React Starship Project
+![star](https://user-images.githubusercontent.com/62027425/235442005-47ace72f-6c84-469f-93b8-84bd8768eda4.png)
+
 This project is a React-based web application that allows users to browse through a list of Starships from the Star Wars universe. The application provides an interface to search for starships based on their name or model. The application uses Tailwind CSS for styling, React Query for API data fetching, and Axios for making API requests.
 
 #Features
