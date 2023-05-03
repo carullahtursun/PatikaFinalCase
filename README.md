@@ -17,28 +17,23 @@ This project is a React-based web application that allows users to browse throug
 Clone the repository:
 
 ```bash
-git clone https://github.com/[username]/react-starship-project.git
+git clone https://github.com/carullahtursun/PatikaFinalCase.git
 
 ```
 
-2. Navigate to the project directory:
 
-```
-cd react-starship-project
-```
-
-3. Install dependencies:
+2. Install dependencies:
 ```bash
 npm install
 ```
 
-4. Start the application:
+3. Start the application:
 sql
 ```bash
 npm start
 ```
 
-5. Open the application in a web browser at http://localhost:3000.
+4. Open the application in a web browser at http://localhost:3000.
 
 # Pages
 Home
